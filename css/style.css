@@ -1,0 +1,178 @@
+@font-face {
+  font-family: "outfit";
+  src: url("/assets/fonts/outfit/Outfit-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "young serif";
+  src: url("/assets/fonts/young-serif/YoungSerif-Regular.ttf");
+}
+
+:root {
+  --fs-400: 1rem;
+  --fs-500: 1.2rem;
+  --fs-600: 1.75rem;
+  --fs-700: 2.75rem; 
+  --fw-bold: bold; 
+  --ff-body: "outfit", sans-serif;
+  --ff-heading: "young serif", serif;
+
+  --primary-colour: #844d3c;
+  --secondary-colour: #9b506f;
+  --body-colour: #8b8784;
+  --bold-colour: #6c6260;
+  --heading-colour: #32312d;
+ 
+  --primary-bg-colour: #f3e5d8;
+  --secondary-bg-colour: #fff7fc;
+  --line-colour: #f7f7f7;
+
+  --section-spacing: 1rem;
+}
+
+body {
+  font-size: var(--fs-400);
+  font-family: var(--ff-body);
+  color: var(--body-colour);
+}
+
+h2,
+h3 {
+  font-family: var(--ff-heading);
+}
+
+h2 {
+  font-size: var(--fs-700);
+  font-weight: var(--fw-bold);
+  color: var(--heading-colour);
+  line-height: 1;
+}
+
+h3 {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-bold);
+  color: var(--primary-colour);
+}
+
+h4 {
+  font-size: var(--fs-500);
+  font-weight: var(--fw-bold);
+  color: var(--secondary-colour);
+}
+
+.text--bold {
+  font-weight: var(--fw-bold);
+  color: var(--bold-colour);
+}
+
+main {
+  background-color: var(--primary-bg-colour); 
+  width: 100vi;
+  padding: 5vb 0;
+}
+
+.recipe {
+  width: 60%;
+  max-width: 825px;
+  margin: 0 auto;
+  padding: 2em;
+  background-color: #ffffff;
+  border-radius: 0.75em;
+}
+
+@media only screen and (max-width: 45em) {
+  main {
+    padding: 0;
+  }
+
+  .recipe {
+    width: 100%;
+  }
+}
+
+.recipe img {
+  width: 100%;
+  margin: 0 0 1.5rem;
+  border-radius: 0.5em;
+}
+
+.recipe h2,
+.recipe h3,
+.recipe h4 {
+  margin: 0 0 var(--section-spacing);
+}
+
+.recipe header p {
+  max-width: 80ch;
+  margin: 0 0 var(--section-spacing);
+}
+
+.recipe ul,
+.recipe ol {
+  padding: 0;
+}
+
+.recipe li {
+  max-width: 80ch;
+  margin-left: 1em;
+  padding: 0 0 .5em 1.5em;
+}
+
+.recipe li::marker {
+  color: var(--primary-colour);
+}
+
+.timings {
+  padding: 1em;
+  margin-bottom: var(--section-spacing);
+  background-color: var(--secondary-bg-colour);
+  
+  border-radius: 0.5em;
+}
+
+.ingredients::after, 
+.instructions::after,
+.nutrition-grid dt::after,
+.nutrition-grid dd::after {
+  content: " ";
+  display: block;
+
+  width: 100%;
+  border-top: 3px solid var(--line-colour);
+}
+
+.ingredients::after, 
+.instructions::after {
+  margin: 1.5em 0;
+}
+
+.nutrition p {
+  margin: 0 0 1em
+}
+
+.nutrition-grid dt::after,
+.nutrition-grid dd::after {
+  margin: .5em;
+}
+
+.nutrition-grid dt:nth-of-type(4)::after,
+.nutrition-grid dd:nth-of-type(4)::after {
+  display: none;
+}
+
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.nutrition-grid dd {
+  grid-column: 2 / auto;
+}
+
+.attribution { 
+  font-size: 11px; text-align: center; 
+}
+    
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
